@@ -1,0 +1,41 @@
+# Environment files
+.env
+backend/.env
+
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+backend/public/assets/
+backend/public/index.html
+backend/public/vite.svg
+
+# Database
+backend/data/
+*.sqlite
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.cache/
+
+# PHP Session
+sess_*
+
+# Lock files (optional - some prefer to commit these)
+# package-lock.json
+# composer.lock
