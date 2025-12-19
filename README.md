@@ -141,6 +141,68 @@ print(result)',
 - **レート制限**: 1セッションあたり1分間に最大5回の提出制限
 - **外部API**: Piston API は公開APIのため、APIキー管理は不要
 
+## 設計図 (System Diagrams)
+
+システム全体のアーキテクチャと詳細な設計図は [docs/diagrams.md](docs/diagrams.md) にまとめています。
+
+### システムアーキテクチャ (System Architecture)
+
+```mermaid
+graph TD
+    Client["Web Browser"] -- HTTP/HTTPS --> Apache["Apache Web Server"]
+    
+    subgraph "Server (XAMPP)"
+        Apache -- Static Files --> React["Frontend Build (React)"]
+        Apache -- API Requests --> PHP["Backend API (PHP)"]
+        
+        PHP -- SQL --> SQLite[("SQLite Database")]
+        PHP --> RateLimit{"Rate Limit (Session)"}
+    end
+    
+    subgraph "External Service"
+        PHP -- HTTP POST (JSON) --> Piston["Judge0 / Piston API"]
+    end
+
+    Client -.-> React
+    Client -.-> PHP
+```
+
+### ページ遷移図 (Page Transition)
+
+```mermaid
+stateDiagram-v2
+    [*] --> ProblemList: アクセス (/)
+
+    state "問題一覧 (Home)" as ProblemList {
+        [*] --> ListDisplay: 一覧表示
+        ListDisplay --> NameInputModal: ユーザー名未設定時
+        NameInputModal --> ListDisplay: 設定完了
+    }
+
+    ListDisplay --> Filling: 問題を選択 (URL /problem/id)
+
+    state "問題詳細 (Problem)" as ProblemDetail {
+        state "コード閲覧・穴埋め選択" as Filling
+        state "提出中 (Submitting)" as Submitting
+        state "判定結果表示 (ResultPanel)" as Result
+        state "ランキング (Leaderboard)" as Leaderboard
+
+        Filling --> ListDisplay: 戻る / ロゴクリック
+        Filling --> Submitting: 提出ボタン押下
+        Submitting --> Result: 判定完了 (Success)
+        Submitting --> Filling: エラー (Error)
+        Result --> Filling: 再挑戦 / リセット
+        
+        note right of Leaderboard
+            常時右側に表示
+            (スマホでは下部)
+        end note
+    }
+```
+
+詳細な実行フロー、データベース構造、状態遷移図などは [docs/diagrams.md](docs/diagrams.md) をご覧ください。
+
+
 ## コード実行 API について
 
 ### Piston API (デフォルト - 無料)
