@@ -97,7 +97,7 @@ export function Home() {
         <div className="flex justify-end mb-4">
           <button
             onClick={() => setShowNameModal(true)}
-            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400 transition-all text-white group"
+            className="flex items-center gap-3 px-5 py-3 rounded-xl bg-linear-to-r from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 hover:border-indigo-400 transition-all text-white group"
           >
             <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -114,7 +114,7 @@ export function Home() {
 
         {/* ヘッダー */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold mb-4 bg-linear-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
             LittleCoder
           </h1>
           <p className="text-slate-400 text-lg">
