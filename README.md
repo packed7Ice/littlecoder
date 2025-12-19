@@ -147,7 +147,7 @@ print(result)',
 - **費用**: 完全無料
 - **APIキー**: 不要
 - **制限**: 公開APIのため、高負荷時にレート制限がかかる可能性あり
-- **URL**: https://emkc.org/api/v2/piston
+- **URL**: https://github.com/engineer-man/piston
 
 ### Judge0 (オプション - 有料)
 より安定性が必要な場合は、`Judge0Client.php` を Judge0 用に書き換えて RapidAPI のキーを設定してください。
