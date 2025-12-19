@@ -143,7 +143,7 @@ print(result)',
 
 ## 設計図 (System Diagrams)
 
-システム全体のアーキテクチャと詳細な設計図は [docs/diagrams.md](docs/diagrams.md) にまとめています。
+システム全体のアーキテクチャと詳細な設計図は [ARCHITECTURE.md](ARCHITECTURE.md) にまとめています。
 
 ### システムアーキテクチャ (System Architecture)
 
@@ -200,7 +200,7 @@ stateDiagram-v2
     }
 ```
 
-詳細な実行フロー、データベース構造、状態遷移図などは [docs/diagrams.md](docs/diagrams.md) をご覧ください。
+詳細な実行フロー、データベース構造、状態遷移図などは [ARCHITECTURE.md](ARCHITECTURE.md) をご覧ください。
 
 
 ## コード実行 API について
