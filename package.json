@@ -1,0 +1,24 @@
+{
+  "name": "littlecoder",
+  "version": "1.0.0",
+  "description": "ブラウザで遊べる「穴埋め式ミニ競プロ」ゲームです。Python コードの穴埋めを完成させて、すべてのテストケースを通過させましょう！",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/packed7Ice/littlecoder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/packed7Ice/littlecoder/issues"
+  },
+  "homepage": "https://github.com/packed7Ice/littlecoder#readme",
+  "devDependencies": {
+    "mermaid": "^11.12.2",
+    "playwright": "^1.57.0"
+  }
+}
