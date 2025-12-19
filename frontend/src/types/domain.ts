@@ -9,6 +9,7 @@ export interface Problem {
   holes: Hole[];
   testCount: number;
   timeLimitMs: number;
+  difficulty: number;
 }
 
 export interface Hole {

@@ -9,6 +9,7 @@ export interface ProblemListResponse extends ApiResponse {
   problems: {
     id: number;
     title: string;
+    difficulty: number;
   }[];
 }
 
@@ -22,6 +23,7 @@ export interface ProblemDetailResponse extends ApiResponse {
     holes: Hole[];
     testCount: number;
     timeLimitMs: number;
+    difficulty: number;
   };
 }
 

@@ -93,6 +93,7 @@ try {
             'holes' => $problem['holes'],
             'testCount' => $testCount,
             'timeLimitMs' => $problem['time_limit_ms'],
+            'difficulty' => $problem['difficulty'],
         ],
     ]);
 } catch (\Exception $e) {

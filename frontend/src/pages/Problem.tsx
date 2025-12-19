@@ -9,6 +9,7 @@ import { ResultPanel } from '../components/ResultPanel';
 import { Leaderboard } from '../components/Leaderboard';
 import { formatTime } from '../lib/time';
 import { useUser } from '../lib/useUser';
+import { difficultyLabels } from '../lib/constants';
 
 interface SubmissionResult {
   status: JudgeStatus;
@@ -169,7 +170,12 @@ export function Problem() {
               </svg>
             </Link>
             <div>
-              <h1 className="text-2xl font-bold">{problem.title}</h1>
+              <div className="flex items-center gap-3">
+                <h1 className="text-2xl font-bold">{problem.title}</h1>
+                <span className={`text-xs px-2 py-0.5 rounded ${difficultyLabels[problem.difficulty || 1].bgColor} ${difficultyLabels[problem.difficulty || 1].color}`}>
+                  {difficultyLabels[problem.difficulty || 1].text}
+                </span>
+              </div>
               <p className="text-sm text-slate-400">
                 テストケース: {problem.testCount}個 / 制限時間: {problem.timeLimitMs}ms
               </p>
